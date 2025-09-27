@@ -167,7 +167,7 @@ def make_dataset(x, batch_size):
     return ds.map(lambda batch: tf.cast(batch, tf.float32),
                   num_parallel_calls=tf.data.AUTOTUNE)
 
-building_lst = ['AT_SFH']
+building_lst = ['AT_SFH'] #'L17'
 for i, building in enumerate(building_lst):
     x_train = np.load(f'train_data/train_{building}.npy')
 
@@ -209,7 +209,3 @@ for i, building in enumerate(building_lst):
         if epoch % 5 == 0:
             print(f"Epoch [{epoch}/{50}] | D Loss: {total_d_loss} | G Loss: {total_g_loss}")
             generator.save(f'Baseline_Model/generator_after_discriminator_{building}.h5')
-
-print("Memory usage:", tracemalloc.get_traced_memory())
-print("Training time:", time.time() - t0)
-tracemalloc.stop()
