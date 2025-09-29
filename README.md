@@ -3,7 +3,7 @@ Network for paper
 
 #### This github repository is used to reproduce the results of the model reconstructed for missing values in heating load data with context encoder, including three parts:
 #### load_data.py: Normalizing and Preprocessing the training data and model the training data and test data with sliding window
-#### model_and_training.py: Modeling, compiling and training the TCN-BiLSTM-CE model and saving the trained model
+#### model.py: Modeling, compiling and training the context encoder and saving the trained model
 #### test.py: Validating with test data
 
 # Data
